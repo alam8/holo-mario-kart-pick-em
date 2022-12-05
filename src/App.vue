@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
+import GroupPicker from "./components/GroupPicker.vue"
 </script>
 
 <template>
@@ -15,6 +16,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
+      <GroupPicker />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
