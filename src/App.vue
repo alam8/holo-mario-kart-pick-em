@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
-import GroupPicker from "./components/GroupPicker.vue"
+import GroupPicker from "./components/GroupPicker.vue";
+import Groups from "./data/Groups.json";
 </script>
 
 <template>
@@ -16,7 +17,11 @@ import GroupPicker from "./components/GroupPicker.vue"
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
-      <GroupPicker />
+      <GroupPicker
+        v-for="group in Groups"
+        :key="group.letter"
+        :members="group.members"
+      />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>

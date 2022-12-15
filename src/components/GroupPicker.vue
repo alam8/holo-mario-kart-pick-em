@@ -1,12 +1,14 @@
 <script setup lang="ts">
-// defineProps<{
-//   members: Object;
-// }>();
+defineProps<{
+  members: Object;
+}>();
 </script>
 
 <template>
-  <div>
-    <p>test</p>
+  <div v-for="member in members" :key="member.name">
+    <ul>
+      <li>{{ member.name }}</li>
+    </ul>
   </div>
 </template>
 
