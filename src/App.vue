@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
 import GroupPicker from "./components/GroupPicker.vue";
@@ -22,7 +22,6 @@ import Groups from "./data/Groups.json";
         :key="group.letter"
         :members="group.members"
       />
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
