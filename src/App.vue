@@ -1,35 +1,20 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "./components/HelloWorld.vue";
-import GroupPicker from "./components/GroupPicker.vue";
-import Groups from "./data/Groups.json";
 </script>
 
 <template>
-  <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
+  <!-- TODO: Add title -->
+  <!-- <div>hololive New Year Cup 2023 Pick'em</div> -->
+  <RouterView />
 
+  <header>
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-      <GroupPicker
-        v-for="group in Groups"
-        :key="group.letter"
-        :members="group.members"
-      />
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
   </header>
-
-  <RouterView />
 </template>
 
 <style scoped>
@@ -44,10 +29,9 @@ header {
 }
 
 nav {
-  width: 100%;
   font-size: 12px;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 12rem;
 }
 
 nav a.router-link-exact-active {
@@ -61,7 +45,6 @@ nav a.router-link-exact-active:hover {
 nav a {
   display: inline-block;
   padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
 }
 
 nav a:first-of-type {
@@ -73,6 +56,8 @@ nav a:first-of-type {
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
+    grid-column-start: 1;
+    justify-content: center;
   }
 
   .logo {
@@ -86,10 +71,8 @@ nav a:first-of-type {
   }
 
   nav {
-    text-align: left;
     margin-left: -1rem;
     font-size: 1rem;
-
     padding: 1rem 0;
     margin-top: 1rem;
   }

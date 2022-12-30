@@ -1,6 +1,9 @@
 <script>
+import VueHorizontal from "vue-horizontal";
+
 export default {
-  props: ["members"],
+  props: ["members", "letter"],
+  components: { VueHorizontal },
   data: function () {
     return {
       checkbox: true,
@@ -12,24 +15,21 @@ export default {
 </script>
 
 <template>
-  <ul>
-    <li v-for="member in members" :key="member.name">
+  <div>Group {{ letter }}</div>
+  <vue-horizontal responsive>
+    <section v-for="member in members" :key="member.name">
       <input type="checkbox" :id="'icon_' + member.name" />
       <label :for="'icon_' + member.name">
         <img :src="`${member.image}`" />
-        <p>{{ member.en }}</p>
+        <div>{{ member.name }}</div>
       </label>
-    </li>
-  </ul>
+    </section>
+  </vue-horizontal>
 </template>
 
 <style scoped>
-ul {
-  list-style-type: none;
-}
-
-li {
-  display: inline-block;
+vue-horizontal {
+  width: 100%;
 }
 
 input[type="checkbox"][id^="icon_"] {
@@ -43,6 +43,7 @@ label {
   position: relative;
   margin: 10px;
   cursor: pointer;
+  text-align: center;
 }
 
 label:before {
@@ -64,8 +65,8 @@ label:before {
 }
 
 label img {
-  height: 50px;
-  width: 50px;
+  height: 75px;
+  width: 75px;
   transition-duration: 0.2s;
   transform-origin: 50% 50%;
 }
