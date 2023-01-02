@@ -1,6 +1,13 @@
 #  holo-mario-kart-pickem
 
-This template should help get you started developing with Vue 3 in Vite.
+Predictions selector tool for the hololive New Year Cup Mario Kart tournament.
+
+## TODO:
+- [ ] Store selected members in array in parent component
+- [ ] Limit selections per group
+- [ ] Render results page
+- [ ] Download icon images instead of linking to site
+- [ ] Styling
 
 ## Recommended IDE Setup
 
