@@ -2,7 +2,7 @@
 import VueHorizontal from "vue-horizontal";
 
 export default {
-  props: ["members", "letter"],
+  props: ["members", "name"],
   components: { VueHorizontal },
   data: function () {
     return {
@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-  <div>Group {{ letter }}</div>
+  <div>Group {{ name }}</div>
   <vue-horizontal responsive>
     <section v-for="member in members" :key="member">
       <input
