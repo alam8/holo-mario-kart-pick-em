@@ -17,9 +17,13 @@ export default {
 <template>
   <div>Group {{ letter }}</div>
   <vue-horizontal responsive>
-    <section v-for="member in members" :key="member.name">
-      <input type="checkbox" :id="'icon_' + member.name" />
-      <label :for="'icon_' + member.name">
+    <section v-for="member in members" :key="member">
+      <input
+        type="checkbox"
+        :id="'icon' + member.name"
+        :value="'Members.' + member.name"
+      />
+      <label :for="'icon' + member.name">
         <img :src="`${member.image}`" />
         <div>{{ member.name }}</div>
       </label>
@@ -32,7 +36,7 @@ vue-horizontal {
   width: 100%;
 }
 
-input[type="checkbox"][id^="icon_"] {
+input[type="checkbox"][id^="icon"] {
   display: none;
 }
 

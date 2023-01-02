@@ -3,15 +3,14 @@ import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-  <!-- TODO: Add title -->
-  <!-- <div>hololive New Year Cup 2023 Pick'em</div> -->
-  <RouterView />
-
   <header>
     <div class="wrapper">
+      <h1>hololive New Year Cup 2023 Pick'em</h1>
+      <RouterView />
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">Group Tsuyo</RouterLink>
+        <RouterLink to="/groupzako">Group Zako</RouterLink>
+        <RouterLink to="/finals">Finals</RouterLink>
       </nav>
     </div>
   </header>

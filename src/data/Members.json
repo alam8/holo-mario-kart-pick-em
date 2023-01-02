@@ -1,0 +1,218 @@
+{
+  "Matsuri": {
+    "name": "Matsuri",
+    "jp": "夏色まつり",
+    "en": "Natsuiro Matsuri",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2021/05/natsuiro_matsuri_thumb.png"
+  },
+  "Okayu": {
+    "name": "Okayu",
+    "jp": "猫又おかゆ",
+    "en": "Nekomata Okayu",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2022/04/G_%E3%81%8A%E3%81%8B%E3%82%86.png"
+  },
+  "Fubuki": {
+    "name": "Fubuki",
+    "jp": "白上フブキ",
+    "en": "Shirakami Fubuki",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2021/05/shirakami_fubuki_thumb.png"
+  },
+  "Towa": {
+    "name": "Towa",
+    "jp": "常闇トワ",
+    "en": "Tokoyami Towa",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2021/05/tokoyami_towa_thumb.png"
+  },
+  "Marine": {
+    "name": "Marine",
+    "jp": "宝鐘マリン",
+    "en": "Houshou Marine",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2021/05/houshou_marine_thumb.png"
+  },
+  "Nene": {
+    "name": "Nene",
+    "jp": "桃鈴ねね",
+    "en": "Momosuzu Nene",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2021/05/momosuzu_nene_thumb.png"
+  },
+  "Chloe": {
+    "name": "Chloe",
+    "jp": "沙花叉クロヱ",
+    "en": "Sakamata Chloe",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2022/09/icon_sakamata.png"
+  },
+  "Iroha": {
+    "name": "Iroha",
+    "jp": "風真いろは",
+    "en": "Kazama Iroha",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2022/09/icon_iroha.png"
+  },
+  "Ame": {
+    "name": "Ame",
+    "jp": "ワトソン・アメリア",
+    "en": "Watson Amelia",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2022/04/%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%A2.png"
+  },
+  "Kronii": {
+    "name": "Kronii",
+    "jp": "オーロ・クロニー",
+    "en": "Ouro Kronii",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2021/08/%E3%82%AA%E3%83%BC%E3%83%AD%E3%83%BB%E3%82%AF%E3%83%AD%E3%83%8B%E3%83%BC.png"
+  },
+  "Moona": {
+    "name": "Moona",
+    "jp": "ムーナ・ホシノヴァ",
+    "en": "Moona Hoshinova",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2022/04/%E3%83%A0%E3%83%BC%E3%83%8A-1.png"
+  },
+  "Anya": {
+    "name": "Anya",
+    "jp": "アーニャ・メルフィッサ",
+    "en": "Anya Melfissa",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2021/11/anya_melfissa_thumb-2.png.png"
+  },
+  "Roboco": {
+    "name": "Roboco",
+    "jp": "ロボ子さん",
+    "en": "Roboco-san",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2020/06/roboco-san_thumb.png"
+  },
+  "Miko": {
+    "name": "Miko",
+    "jp": "さくらみこ",
+    "en": "Sakura Miko",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2020/06/sakuramiko_icon.png"
+  },
+  "Suisei": {
+    "name": "Suisei",
+    "jp": "星街すいせい",
+    "en": "Hoshimachi Suisei",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2020/10/hoshimachi_suisei_thumb.png"
+  },
+  "Haachama": {
+    "name": "Haachama",
+    "jp": "赤井はあと",
+    "en": "Akai Haato",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2022/04/1_%E3%81%AF%E3%81%82%E3%81%A8.png"
+  },
+  "Mel": {
+    "name": "Mel",
+    "jp": "夜空メル",
+    "en": "Yozora Mel",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2022/01/mel_thumb.png"
+  },
+  "Ayame": {
+    "name": "Ayame",
+    "jp": "百鬼あやめ",
+    "en": "Nakiri Ayame",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2021/05/nakiri_ayame_thumb.png"
+  },
+  "Watame": {
+    "name": "Watame",
+    "jp": "角巻わため",
+    "en": "Tsunomaki Watame",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2022/09/watabe_icon.png"
+  },
+  "Luna": {
+    "name": "Luna",
+    "jp": "姫森ルーナ",
+    "en": "Himemori Luna",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2021/12/Luna_thumb.png"
+  },
+  "Lamy": {
+    "name": "Lamy",
+    "jp": "雪花ラミィ",
+    "en": "Yukihana Lamy",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2021/05/yukihana_lamy_thumb.png"
+  },
+  "Gura": {
+    "name": "Gura",
+    "jp": "がうる・ぐら",
+    "en": "Gawr Gura",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2022/04/%E3%81%90%E3%82%89.png"
+  },
+  "Kobo": {
+    "name": "Kobo",
+    "jp": "こぼ・かなえる",
+    "en": "Kobo Kanaeru",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2022/03/3_%E3%81%93%E3%81%BC%E3%83%BB%E3%81%8B%E3%81%AA%E3%81%88%E3%82%8B.png"
+  },
+  "Kaela": {
+    "name": "Kaela",
+    "jp": "カエラ・コヴァルスキア",
+    "en": "Kaela Kovalskia",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2022/03/2_%E3%82%AB%E3%82%A8%E3%83%A9%E3%83%BB%E3%82%B3%E3%83%B4%E3%82%A1%E3%83%AB%E3%82%B9%E3%82%AD%E3%82%A2.png"
+  },
+  "Sora": {
+    "name": "Sora",
+    "jp": "ときのそら",
+    "en": "Tokino Sora",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2021/05/tokino_sora_thumb.png"
+  },
+  "Aki": {
+    "name": "Aki",
+    "jp": "アキ・ローゼンタール",
+    "en": "Aki Rosenthal",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2020/06/Aki_list_thumb.png"
+  },
+  "Mio": {
+    "name": "Mio",
+    "jp": "大神ミオ",
+    "en": "Ookami Mio",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2021/05/ookami_mio_thumb.png"
+  },
+  "Choco": {
+    "name": "Choco",
+    "jp": "癒月ちょこ",
+    "en": "Yuzuki Choco",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2021/05/yuzuki_choco_thumb.png"
+  },
+  "Subaru": {
+    "name": "Subaru",
+    "jp": "大空スバル",
+    "en": "Oozora Subaru",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2021/05/oozora_subaru_thumb.png"
+  },
+  "Pekora": {
+    "name": "Pekora",
+    "jp": "兎田ぺこら",
+    "en": "Usada Pekora",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2022/04/3_%E3%81%BA%E3%81%93%E3%82%89.png"
+  },
+  "Noel": {
+    "name": "Noel",
+    "jp": "白銀ノエル",
+    "en": "Shirogane Noel",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2021/05/shirogane_noel_thumb.png"
+  },
+  "Lui": {
+    "name": "Lui",
+    "jp": "鷹嶺ルイ",
+    "en": "Takane Lui",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2022/09/lui_icon.png"
+  },
+  "Koyori": {
+    "name": "Koyori",
+    "jp": "博衣こより",
+    "en": "Hakui Koyori",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2022/09/icon_koyori.png"
+  },
+  "Ollie": {
+    "name": "Ollie",
+    "jp": "クレイジー・オリー",
+    "en": "Kureiji Ollie",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2021/11/kureiji_ollie_thumb-2.png.png"
+  },
+  "Reine": {
+    "name": "Reine",
+    "jp": "パヴォリア・レイネ",
+    "en": "Pavolia Reine",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2021/11/pavolia_reine_thumb-2.png.png.png"
+  },
+  "Zeta": {
+    "name": "Zeta",
+    "jp": "ベスティア・ゼータ",
+    "en": "Vestia Zeta",
+    "image": "https://hololive.hololivepro.com/wp-content/uploads/2022/03/1_%E3%83%99%E3%82%B9%E3%83%86%E3%82%A3%E3%82%A2%E3%83%BB%E3%82%BC%E3%83%BC%E3%82%BF.png"
+  }
+}
