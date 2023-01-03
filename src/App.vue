@@ -1,17 +1,108 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+import GroupPicker from "./components/GroupPicker.vue";
+import Members from "./data/Members.json";
+</script>
+
+<script>
+export default {
+  data() {
+    return {
+      groups: [
+        {
+          name: "A",
+          members: [
+            Members.Matsuri,
+            Members.Fubuki,
+            Members.Okayu,
+            Members.Marine,
+            Members.Towa,
+            Members.Nene,
+            Members.Chloe,
+            Members.Iroha,
+            Members.Ame,
+            Members.Kronii,
+            Members.Moona,
+            Members.Anya,
+          ],
+        },
+        {
+          name: "B",
+          members: [
+            Members.Roboco,
+            Members.Miko,
+            Members.Mel,
+            Members.Suisei,
+            Members.Haachama,
+            Members.Ayame,
+            Members.Watame,
+            Members.Luna,
+            Members.Lamy,
+            Members.Gura,
+            Members.Kaela,
+            Members.Kobo,
+          ],
+        },
+        {
+          name: "C",
+          members: [
+            Members.Sora,
+            Members.Aki,
+            Members.Choco,
+            Members.Subaru,
+            Members.Mio,
+            Members.Pekora,
+            Members.Noel,
+            Members.Lui,
+            Members.Koyori,
+            Members.Ollie,
+            Members.Reine,
+            Members.Zeta,
+          ],
+        },
+      ],
+      tsuyoFinalists: [],
+      zakoFinalists: [],
+      tsuyoChampion: [],
+      zakoChampion: [],
+    };
+  },
+};
 </script>
 
 <template>
   <header>
     <div class="wrapper">
       <h1>hololive New Year Cup 2023 Pick'em</h1>
-      <RouterView />
-      <nav>
-        <RouterLink to="/">Group Tsuyo</RouterLink>
-        <RouterLink to="/groupzako">Group Zako</RouterLink>
-        <RouterLink to="/finals">Finals</RouterLink>
-      </nav>
+      <!-- TODO: Separate rounds using carousel component -->
+      <GroupPicker
+        v-for="group in groups"
+        :key="group"
+        :members="group.members"
+        :name="group.name"
+        round="1"
+        v-model="tsuyoFinalists"
+      />
+      <GroupPicker
+        v-for="group in groups"
+        :key="group"
+        :members="group.members"
+        :name="group.name"
+        round="2"
+        v-model="zakoFinalists"
+      />
+      <GroupPicker
+        :members="tsuyoFinalists"
+        name="Tsuyo"
+        round="3"
+        v-model="tsuyoChampion"
+      />
+      <GroupPicker
+        :members="zakoFinalists"
+        name="Zako"
+        round="4"
+        v-model="zakoChampion"
+      />
+      <!-- TODO: Results -->
     </div>
   </header>
 </template>

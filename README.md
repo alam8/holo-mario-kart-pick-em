@@ -3,11 +3,13 @@
 Predictions selector tool for the hololive New Year Cup Mario Kart tournament.
 
 ## TODO:
-- [ ] Store selected members in array in parent component
+- [x] Store selected members in array in parent component
+- [ ] Separate rounds using carousel component
 - [ ] Limit selections per group
 - [ ] Render results page
 - [ ] Download icon images instead of linking to site
 - [ ] Styling
+- [ ] Rewrite in Typescript
 
 ## Recommended IDE Setup
 

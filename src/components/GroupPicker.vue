@@ -2,7 +2,7 @@
 import VueHorizontal from "vue-horizontal";
 
 export default {
-  props: ["members", "name"],
+  props: ["members", "name", "round", "modelValue"],
   components: { VueHorizontal },
   data: function () {
     return {
@@ -11,6 +11,16 @@ export default {
   },
   mounted() {},
   methods: {},
+  computed: {
+    finalists: {
+      get() {
+        return this.modelValue;
+      },
+      set(val) {
+        this.$emit("update:modelValue", val);
+      },
+    },
+  },
 };
 </script>
 
@@ -20,10 +30,11 @@ export default {
     <section v-for="member in members" :key="member">
       <input
         type="checkbox"
-        :id="'icon' + member.name"
-        :value="'Members.' + member.name"
+        :id="'icon' + member.name + round"
+        :value="member"
+        v-model="finalists"
       />
-      <label :for="'icon' + member.name">
+      <label :for="'icon' + member.name + round">
         <img :src="`${member.image}`" />
         <div>{{ member.name }}</div>
       </label>
@@ -87,7 +98,6 @@ label img {
 
 :checked + label img {
   transform: scale(0.9);
-  /* box-shadow: 0 0 5px #333; */
   z-index: -1;
 }
 </style>

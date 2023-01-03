@@ -72,6 +72,8 @@ export default {
       :key="group"
       :members="group.members"
       :name="group.name"
+      v-model="tsuyoFinalists"
     />
+    <GroupPicker :members="tsuyoFinalists" name="Tsuyo" />
   </main>
 </template>
