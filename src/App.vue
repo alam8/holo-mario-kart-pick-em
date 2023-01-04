@@ -60,11 +60,29 @@ export default {
           ],
         },
       ],
-      tsuyoFinalists: [],
-      zakoFinalists: [],
+      tsuyoFinalistsA: [],
+      tsuyoFinalistsB: [],
+      tsuyoFinalistsC: [],
+      zakoFinalistsA: [],
+      zakoFinalistsB: [],
+      zakoFinalistsC: [],
       tsuyoChampion: [],
       zakoChampion: [],
     };
+  },
+  computed: {
+    tsuyoFinalists() {
+      return this.tsuyoFinalistsA.concat(
+        this.tsuyoFinalistsB,
+        this.tsuyoFinalistsC
+      );
+    },
+    zakoFinalists() {
+      return this.zakoFinalistsA.concat(
+        this.zakoFinalistsB,
+        this.zakoFinalistsC
+      );
+    },
   },
 };
 </script>
@@ -72,54 +90,85 @@ export default {
 <template>
   <header>
     <div class="wrapper">
-      <h1>hololive New Year Cup 2023 Pick'em</h1>
-      <b-card no-body>
-        <b-tabs pills card end>
-          <b-tab title="Group Stage: Tsuyo" active>
+      <h1 id="title">hololive New Year Cup 2023 Pick'em</h1>
+      <b-card class="group-card" no-body>
+        <b-tabs pills justified lazy>
+          <b-tab class="group-body" title="Group Stage: Tsuyo" active>
             <GroupPicker
-              v-for="group in groups"
-              :key="group"
-              :members="group.members"
-              :name="group.name"
+              :members="groups[0].members"
+              :name="groups[0].name"
               round="1"
-              v-model="tsuyoFinalists"
+              v-model="tsuyoFinalistsA"
+              winnersCount="4"
             />
-          </b-tab>
-          <b-tab title="Group Stage: Zako">
             <GroupPicker
-              v-for="group in groups"
-              :key="group"
-              :members="group.members"
-              :name="group.name"
-              round="2"
-              v-model="zakoFinalists"
+              :members="groups[1].members"
+              :name="groups[1].name"
+              round="1"
+              v-model="tsuyoFinalistsB"
+              winnersCount="4"
+            />
+            <GroupPicker
+              :members="groups[2].members"
+              :name="groups[2].name"
+              round="1"
+              v-model="tsuyoFinalistsC"
+              winnersCount="4"
             />
           </b-tab>
-          <b-tab title="Finals">
+          <b-tab class="group-body" title="Group Stage: Zako">
+            <GroupPicker
+              :members="groups[0].members"
+              :name="groups[0].name"
+              round="1"
+              v-model="zakoFinalistsA"
+              winnersCount="4"
+            />
+            <GroupPicker
+              :members="groups[1].members"
+              :name="groups[1].name"
+              round="1"
+              v-model="zakoFinalistsB"
+              winnersCount="4"
+            />
+            <GroupPicker
+              :members="groups[2].members"
+              :name="groups[2].name"
+              round="1"
+              v-model="zakoFinalistsC"
+              winnersCount="4"
+            />
+          </b-tab>
+          <b-tab class="group-body" title="Finals">
             <GroupPicker
               :members="tsuyoFinalists"
               name="Tsuyo Cup Finalists"
               round="3"
               v-model="tsuyoChampion"
+              winnersCount="3"
             />
             <GroupPicker
               :members="zakoFinalists"
               name="Zako Cup Finalists"
               round="4"
               v-model="zakoChampion"
+              winnersCount="3"
             />
           </b-tab>
-          <b-tab title="Results">
-            <GroupPicker
+          <b-tab class="group-body" title="Results">
+            <!-- TODO: Use different component to show results instead of GroupPicker -->
+            <!-- <GroupPicker
               :members="tsuyoChampion"
               name="Tsuyo Champion"
               round="5"
+              winnersCount="1"
             />
             <GroupPicker
               :members="zakoChampion"
               name="Zako Champion"
               round="6"
-            />
+              winnersCount="1"
+            /> -->
           </b-tab>
         </b-tabs>
       </b-card>
@@ -128,8 +177,17 @@ export default {
 </template>
 
 <style scoped>
-.card-header-tabs .nav-link.active {
-  background-color: var(--bs-nav-pills-link-active-bg) !important;
+#title {
+  margin-bottom: 1.5rem;
+}
+
+.group-card {
+  background: var(--color-background);
+  border: 0px;
+}
+
+.group-body {
+  margin-top: 1.5rem;
 }
 
 header {
@@ -166,12 +224,20 @@ nav a:first-of-type {
 }
 
 @media (min-width: 1024px) {
+  .wrapper {
+    margin-left: -3.85vw;
+  }
+
   header {
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
     grid-column-start: 1;
     justify-content: center;
+  }
+
+  .group-card {
+    width: 75vw;
   }
 
   .logo {

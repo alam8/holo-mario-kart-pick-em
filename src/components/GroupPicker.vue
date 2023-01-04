@@ -2,7 +2,7 @@
 import VueHorizontal from "vue-horizontal";
 
 export default {
-  props: ["members", "name", "round", "modelValue"],
+  props: ["members", "name", "round", "modelValue", "winnersCount"],
   components: { VueHorizontal },
   data: function () {
     return {
@@ -25,14 +25,18 @@ export default {
 </script>
 
 <template>
-  <div>{{ name }}</div>
-  <vue-horizontal responsive>
+  <div>{{ name }}: {{ finalists.length }}/{{ winnersCount }}</div>
+  <vue-horizontal class="selector" responsive>
     <section v-for="member in members" :key="member">
       <input
         type="checkbox"
         :id="'icon' + member.name + round"
         :value="member"
         v-model="finalists"
+        :disabled="finalists === null ? false :
+          finalists.length > winnersCount - 1 &&
+          finalists.indexOf(member) === -1
+        "
       />
       <label :for="'icon' + member.name + round">
         <img :src="`${member.image}`" />
@@ -43,7 +47,15 @@ export default {
 </template>
 
 <style scoped>
-vue-horizontal {
+input:disabled + label > img {
+  opacity: 0.2;
+}
+
+input:disabled + label > div {
+  opacity: 0.2;
+}
+
+.selector {
   width: 100%;
 }
 

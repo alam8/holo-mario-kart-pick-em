@@ -5,7 +5,8 @@ Predictions selector tool for the hololive New Year Cup Mario Kart tournament.
 ## TODO:
 - [x] Store selected members in array in parent component
 - [x] Separate rounds using tab component
-- [ ] Limit selections per group
+- [x] Limit selections per group
+- [ ] Disable/enable tabs based on selections
 - [ ] Render results page
 - [ ] Download icon images instead of linking to site
 - [ ] Styling
