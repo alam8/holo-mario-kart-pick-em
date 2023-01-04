@@ -9,6 +9,8 @@ import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
 
 import "./assets/main.css";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue-3/dist/bootstrap-vue-3.css";
 
 const vuetify = createVuetify({
   components,

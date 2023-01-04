@@ -9,7 +9,7 @@ export default {
     return {
       groups: [
         {
-          name: "A",
+          name: "Group A",
           members: [
             Members.Matsuri,
             Members.Fubuki,
@@ -26,7 +26,7 @@ export default {
           ],
         },
         {
-          name: "B",
+          name: "Group B",
           members: [
             Members.Roboco,
             Members.Miko,
@@ -43,7 +43,7 @@ export default {
           ],
         },
         {
-          name: "C",
+          name: "Group C",
           members: [
             Members.Sora,
             Members.Aki,
@@ -73,41 +73,65 @@ export default {
   <header>
     <div class="wrapper">
       <h1>hololive New Year Cup 2023 Pick'em</h1>
-      <!-- TODO: Separate rounds using carousel component -->
-      <GroupPicker
-        v-for="group in groups"
-        :key="group"
-        :members="group.members"
-        :name="group.name"
-        round="1"
-        v-model="tsuyoFinalists"
-      />
-      <GroupPicker
-        v-for="group in groups"
-        :key="group"
-        :members="group.members"
-        :name="group.name"
-        round="2"
-        v-model="zakoFinalists"
-      />
-      <GroupPicker
-        :members="tsuyoFinalists"
-        name="Tsuyo"
-        round="3"
-        v-model="tsuyoChampion"
-      />
-      <GroupPicker
-        :members="zakoFinalists"
-        name="Zako"
-        round="4"
-        v-model="zakoChampion"
-      />
-      <!-- TODO: Results -->
+      <b-card no-body>
+        <b-tabs pills card end>
+          <b-tab title="Group Stage: Tsuyo" active>
+            <GroupPicker
+              v-for="group in groups"
+              :key="group"
+              :members="group.members"
+              :name="group.name"
+              round="1"
+              v-model="tsuyoFinalists"
+            />
+          </b-tab>
+          <b-tab title="Group Stage: Zako">
+            <GroupPicker
+              v-for="group in groups"
+              :key="group"
+              :members="group.members"
+              :name="group.name"
+              round="2"
+              v-model="zakoFinalists"
+            />
+          </b-tab>
+          <b-tab title="Finals">
+            <GroupPicker
+              :members="tsuyoFinalists"
+              name="Tsuyo Cup Finalists"
+              round="3"
+              v-model="tsuyoChampion"
+            />
+            <GroupPicker
+              :members="zakoFinalists"
+              name="Zako Cup Finalists"
+              round="4"
+              v-model="zakoChampion"
+            />
+          </b-tab>
+          <b-tab title="Results">
+            <GroupPicker
+              :members="tsuyoChampion"
+              name="Tsuyo Champion"
+              round="5"
+            />
+            <GroupPicker
+              :members="zakoChampion"
+              name="Zako Champion"
+              round="6"
+            />
+          </b-tab>
+        </b-tabs>
+      </b-card>
     </div>
   </header>
 </template>
 
 <style scoped>
+.card-header-tabs .nav-link.active {
+  background-color: var(--bs-nav-pills-link-active-bg) !important;
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;

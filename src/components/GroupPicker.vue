@@ -25,7 +25,7 @@ export default {
 </script>
 
 <template>
-  <div>Group {{ name }}</div>
+  <div>{{ name }}</div>
   <vue-horizontal responsive>
     <section v-for="member in members" :key="member">
       <input
