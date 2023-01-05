@@ -1,65 +1,13 @@
 <script setup>
 import GroupPicker from "./components/GroupPicker.vue";
-import Members from "./data/Members.json";
+import GroupData from "./data/GroupData.js";
 </script>
 
 <script>
 export default {
   data() {
     return {
-      groups: [
-        {
-          name: "Group A",
-          members: [
-            Members.Matsuri,
-            Members.Fubuki,
-            Members.Okayu,
-            Members.Marine,
-            Members.Towa,
-            Members.Nene,
-            Members.Chloe,
-            Members.Iroha,
-            Members.Ame,
-            Members.Kronii,
-            Members.Moona,
-            Members.Anya,
-          ],
-        },
-        {
-          name: "Group B",
-          members: [
-            Members.Roboco,
-            Members.Miko,
-            Members.Mel,
-            Members.Suisei,
-            Members.Haachama,
-            Members.Ayame,
-            Members.Watame,
-            Members.Luna,
-            Members.Lamy,
-            Members.Gura,
-            Members.Kaela,
-            Members.Kobo,
-          ],
-        },
-        {
-          name: "Group C",
-          members: [
-            Members.Sora,
-            Members.Aki,
-            Members.Choco,
-            Members.Subaru,
-            Members.Mio,
-            Members.Pekora,
-            Members.Noel,
-            Members.Lui,
-            Members.Koyori,
-            Members.Ollie,
-            Members.Reine,
-            Members.Zeta,
-          ],
-        },
-      ],
+      groups: GroupData.groups,
       tsuyoFinalistsA: [],
       tsuyoFinalistsB: [],
       tsuyoFinalistsC: [],
@@ -84,6 +32,22 @@ export default {
       );
     },
   },
+  methods: {
+    getGroupLetter: function (name) {
+      return name.slice(-1);
+    },
+    finalistsNotSelected(size) {
+      return !(
+        this.tsuyoFinalists.length === size &&
+        this.zakoFinalists.length === size
+      );
+    },
+    champsNotSelected(size) {
+      return !(
+        this.tsuyoChampion.length === size && this.zakoChampion.length === size
+      );
+    },
+  },
 };
 </script>
 
@@ -95,69 +59,64 @@ export default {
         <b-tabs pills justified lazy>
           <b-tab class="group-body" title="Group Stage: Tsuyo" active>
             <GroupPicker
-              :members="groups[0].members"
-              :name="groups[0].name"
+              v-for="group in groups"
+              :key="group"
+              :members="group.members"
+              :name="group.name"
               round="1"
-              v-model="tsuyoFinalistsA"
-              winnersCount="4"
-            />
-            <GroupPicker
-              :members="groups[1].members"
-              :name="groups[1].name"
-              round="1"
-              v-model="tsuyoFinalistsB"
-              winnersCount="4"
-            />
-            <GroupPicker
-              :members="groups[2].members"
-              :name="groups[2].name"
-              round="1"
-              v-model="tsuyoFinalistsC"
-              winnersCount="4"
+              v-model="this['tsuyoFinalists' + getGroupLetter(group.name)]"
+              :winnersCount="GroupData.FINALISTS_PER_GROUP"
+              :complement="zakoFinalists"
+              :champions="[]"
             />
           </b-tab>
           <b-tab class="group-body" title="Group Stage: Zako">
             <GroupPicker
-              :members="groups[0].members"
-              :name="groups[0].name"
+              v-for="group in groups"
+              :key="group"
+              :members="group.members"
+              :name="group.name"
               round="1"
-              v-model="zakoFinalistsA"
-              winnersCount="4"
-            />
-            <GroupPicker
-              :members="groups[1].members"
-              :name="groups[1].name"
-              round="1"
-              v-model="zakoFinalistsB"
-              winnersCount="4"
-            />
-            <GroupPicker
-              :members="groups[2].members"
-              :name="groups[2].name"
-              round="1"
-              v-model="zakoFinalistsC"
-              winnersCount="4"
+              v-model="this['zakoFinalists' + getGroupLetter(group.name)]"
+              :winnersCount="GroupData.FINALISTS_PER_GROUP"
+              :complement="tsuyoFinalists"
+              :champions="[]"
             />
           </b-tab>
-          <b-tab class="group-body" title="Finals">
+          <b-tab
+            class="group-body"
+            title="Finals"
+            :disabled="
+              finalistsNotSelected(
+                GroupData.FINALISTS_PER_GROUP * GroupData.NUMBER_OF_GROUPS
+              )
+            "
+          >
             <GroupPicker
               :members="tsuyoFinalists"
               name="Tsuyo Cup Finalists"
               round="3"
               v-model="tsuyoChampion"
-              winnersCount="3"
+              :winnersCount="GroupData.PODIUM_SIZE"
+              :complement="[]"
+              :champions="tsuyoChampion"
             />
             <GroupPicker
               :members="zakoFinalists"
               name="Zako Cup Finalists"
               round="4"
               v-model="zakoChampion"
-              winnersCount="3"
+              :winnersCount="GroupData.PODIUM_SIZE"
+              :complement="[]"
+              :champions="zakoChampion"
             />
           </b-tab>
-          <b-tab class="group-body" title="Results">
-            <!-- TODO: Use different component to show results instead of GroupPicker -->
-            <!-- <GroupPicker
+          <!-- <b-tab
+            class="group-body"
+            title="Results"
+            :disabled="champsNotSelected(GroupData.PODIUM_SIZE)"
+          >
+            <GroupPicker
               :members="tsuyoChampion"
               name="Tsuyo Champion"
               round="5"
@@ -168,8 +127,8 @@ export default {
               name="Zako Champion"
               round="6"
               winnersCount="1"
-            /> -->
-          </b-tab>
+            />
+          </b-tab> -->
         </b-tabs>
       </b-card>
     </div>

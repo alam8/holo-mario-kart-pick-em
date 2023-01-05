@@ -2,7 +2,15 @@
 import VueHorizontal from "vue-horizontal";
 
 export default {
-  props: ["members", "name", "round", "modelValue", "winnersCount"],
+  props: [
+    "members",
+    "name",
+    "round",
+    "modelValue",
+    "winnersCount",
+    "complement",
+    "champions",
+  ],
   components: { VueHorizontal },
   data: function () {
     return {
@@ -10,7 +18,13 @@ export default {
     };
   },
   mounted() {},
-  methods: {},
+  methods: {
+    applyPodiumStyling: function (member) {
+      if (member === this.champions[0]) return "first";
+      if (member === this.champions[1]) return "second";
+      if (member === this.champions[2]) return "third";
+    },
+  },
   computed: {
     finalists: {
       get() {
@@ -25,7 +39,10 @@ export default {
 </script>
 
 <template>
-  <div>{{ name }}: {{ finalists.length }}/{{ winnersCount }}</div>
+  <span>{{ name }}</span>
+  <span v-if="modelValue.length != winnersCount"
+    >: {{ finalists.length }}/{{ winnersCount }}
+  </span>
   <vue-horizontal class="selector" responsive>
     <section v-for="member in members" :key="member">
       <input
@@ -33,12 +50,16 @@ export default {
         :id="'icon' + member.name + round"
         :value="member"
         v-model="finalists"
-        :disabled="finalists === null ? false :
-          finalists.length > winnersCount - 1 &&
-          finalists.indexOf(member) === -1
+        :disabled="
+          complement.includes(member) ||
+          (finalists.length === winnersCount &&
+            finalists.indexOf(member) === -1)
         "
       />
-      <label :for="'icon' + member.name + round">
+      <label
+        :id="applyPodiumStyling(member)"
+        :for="'icon' + member.name + round"
+      >
         <img :src="`${member.image}`" />
         <div>{{ member.name }}</div>
       </label>
@@ -47,12 +68,27 @@ export default {
 </template>
 
 <style scoped>
+#first {
+  border: 3px solid rgb(255, 217, 0);
+  border-radius: 25px;
+}
+
+#second {
+  border: 3px solid rgb(179, 179, 179);
+  border-radius: 25px;
+}
+
+#third {
+  border: 3px solid rgb(155, 79, 17);
+  border-radius: 25px;
+}
+
 input:disabled + label > img {
-  opacity: 0.2;
+  opacity: 0.35;
 }
 
 input:disabled + label > div {
-  opacity: 0.2;
+  opacity: 0.35;
 }
 
 .selector {
@@ -99,14 +135,15 @@ label img {
 }
 
 :checked + label {
-  border-color: #ddd;
+  border: 3px solid rgb(14, 190, 52);
+  border-radius: 25px;
 }
 
-:checked + label:before {
+/* :checked + label:before {
   content: "✓";
   background-color: grey;
   transform: scale(1);
-}
+} */
 
 :checked + label img {
   transform: scale(0.9);
