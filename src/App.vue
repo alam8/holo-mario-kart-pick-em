@@ -54,7 +54,12 @@ export default {
       var originalWidth = blob.offsetWidth;
       var originalHeight = blob.offsetHeight;
       blob.style.width = "1400px";
-      blob.style.height = "362px";
+      blob.style.height = "325px";
+
+      var svgs = document.getElementsByTagName("svg");
+      for (var i = 0; i < svgs.length; ++i) {
+        svgs[i].style.display = "none";
+      }
 
       await domtoimage.toBlob(blob).then(function (blob) {
         saveAs(blob, "results.png");
@@ -62,6 +67,9 @@ export default {
 
       blob.style.width = originalWidth + "px";
       blob.style.height = originalHeight + "px";
+      for (var j = 0; j < svgs.length; ++j) {
+        svgs[j].style.display = "initial";
+      }
     },
   },
 };
@@ -132,8 +140,8 @@ export default {
               variant="primary"
               @click="print"
               :disabled="champsNotSelected(GroupData.PODIUM_SIZE)"
-              >Save Results As Image</b-button
-            >
+              ><i-bi-download style="margin-right: 7px" />Save Results As Image
+            </b-button>
           </b-tab>
           <!-- <b-tab
             class="group-body"

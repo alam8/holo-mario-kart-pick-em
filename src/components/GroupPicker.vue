@@ -43,7 +43,7 @@ export default {
   <span v-if="modelValue.length != winnersCount"
     >: {{ finalists.length }}/{{ winnersCount }}
   </span>
-  <vue-horizontal class="selector" responsive>
+  <vue-horizontal class="selector horizontal" responsive>
     <section v-for="member in members" :key="member">
       <input
         type="checkbox"
