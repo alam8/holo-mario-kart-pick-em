@@ -100,7 +100,6 @@ input[type="checkbox"][id^="icon"] {
 }
 
 label {
-  border: 0px solid #fff;
   padding: 10px;
   display: block;
   position: relative;

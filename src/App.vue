@@ -1,6 +1,8 @@
 <script setup>
 import GroupPicker from "./components/GroupPicker.vue";
 import GroupData from "./data/GroupData.js";
+import domtoimage from "dom-to-image-more";
+import { saveAs } from "file-saver";
 </script>
 
 <script>
@@ -47,6 +49,20 @@ export default {
         this.tsuyoChampion.length === size && this.zakoChampion.length === size
       );
     },
+    async print() {
+      var blob = document.getElementById("results");
+      var originalWidth = blob.offsetWidth;
+      var originalHeight = blob.offsetHeight;
+      blob.style.width = "1400px";
+      blob.style.height = "362px";
+
+      await domtoimage.toBlob(blob).then(function (blob) {
+        saveAs(blob, "results.png");
+      });
+
+      blob.style.width = originalWidth + "px";
+      blob.style.height = originalHeight + "px";
+    },
   },
 };
 </script>
@@ -92,24 +108,32 @@ export default {
               )
             "
           >
-            <GroupPicker
-              :members="tsuyoFinalists"
-              name="Tsuyo Cup Finalists"
-              round="3"
-              v-model="tsuyoChampion"
-              :winnersCount="GroupData.PODIUM_SIZE"
-              :complement="[]"
-              :champions="tsuyoChampion"
-            />
-            <GroupPicker
-              :members="zakoFinalists"
-              name="Zako Cup Finalists"
-              round="4"
-              v-model="zakoChampion"
-              :winnersCount="GroupData.PODIUM_SIZE"
-              :complement="[]"
-              :champions="zakoChampion"
-            />
+            <div id="results">
+              <GroupPicker
+                :members="tsuyoFinalists"
+                name="Tsuyo Cup Finalists"
+                round="3"
+                v-model="tsuyoChampion"
+                :winnersCount="GroupData.PODIUM_SIZE"
+                :complement="[]"
+                :champions="tsuyoChampion"
+              />
+              <GroupPicker
+                :members="zakoFinalists"
+                name="Zako Cup Finalists"
+                round="4"
+                v-model="zakoChampion"
+                :winnersCount="GroupData.PODIUM_SIZE"
+                :complement="[]"
+                :champions="zakoChampion"
+              />
+            </div>
+            <b-button
+              variant="primary"
+              @click="print"
+              :disabled="champsNotSelected(GroupData.PODIUM_SIZE)"
+              >Save Results As Image</b-button
+            >
           </b-tab>
           <!-- <b-tab
             class="group-body"
@@ -138,6 +162,10 @@ export default {
 <style scoped>
 #title {
   margin-bottom: 1.5rem;
+}
+
+#results {
+  background: var(--color-background);
 }
 
 .group-card {
