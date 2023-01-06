@@ -12,16 +12,11 @@ declare module '@vue/runtime-core' {
     BTab: typeof import('bootstrap-vue-3')['BTab']
     BTabs: typeof import('bootstrap-vue-3')['BTabs']
     GroupPicker: typeof import('./src/components/GroupPicker.vue')['default']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     IBiDownload: typeof import('~icons/bi/download')['default']
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
     IconDocumentation: typeof import('./src/components/icons/IconDocumentation.vue')['default']
     IconEcosystem: typeof import('./src/components/icons/IconEcosystem.vue')['default']
     IconSupport: typeof import('./src/components/icons/IconSupport.vue')['default']
     IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
-    TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
-    WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
   }
 }
