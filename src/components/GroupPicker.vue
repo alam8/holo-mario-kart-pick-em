@@ -17,7 +17,6 @@ export default {
       checkbox: true,
     };
   },
-  mounted() {},
   methods: {
     applyPodiumStyling: function (member) {
       if (member === this.champions[0]) return "first";

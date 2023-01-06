@@ -88,7 +88,7 @@ export default {
               :members="group.members"
               :name="group.name"
               round="1"
-              v-model="this['tsuyoFinalists' + getGroupLetter(group.name)]"
+              v-model="$data['tsuyoFinalists' + getGroupLetter(group.name)]"
               :winnersCount="GroupData.FINALISTS_PER_GROUP"
               :complement="zakoFinalists"
               :champions="[]"
@@ -101,7 +101,7 @@ export default {
               :members="group.members"
               :name="group.name"
               round="1"
-              v-model="this['zakoFinalists' + getGroupLetter(group.name)]"
+              v-model="$data['zakoFinalists' + getGroupLetter(group.name)]"
               :winnersCount="GroupData.FINALISTS_PER_GROUP"
               :complement="tsuyoFinalists"
               :champions="[]"
@@ -143,24 +143,6 @@ export default {
               ><i-bi-download style="margin-right: 7px" />Save Results As Image
             </b-button>
           </b-tab>
-          <!-- <b-tab
-            class="group-body"
-            title="Results"
-            :disabled="champsNotSelected(GroupData.PODIUM_SIZE)"
-          >
-            <GroupPicker
-              :members="tsuyoChampion"
-              name="Tsuyo Champion"
-              round="5"
-              winnersCount="1"
-            />
-            <GroupPicker
-              :members="zakoChampion"
-              name="Zako Champion"
-              round="6"
-              winnersCount="1"
-            />
-          </b-tab> -->
         </b-tabs>
       </b-card>
     </div>
