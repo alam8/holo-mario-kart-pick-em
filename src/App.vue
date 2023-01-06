@@ -153,11 +153,11 @@ export default {
               )
             "
           >
+            <div class="info-text">
+              Select your picks for the top
+              {{ GroupData.PODIUM_SIZE }} finishers from each finals bracket.
+            </div>
             <div id="results">
-              <div class="info-text">
-                Select your picks for the top
-                {{ GroupData.PODIUM_SIZE }} finishers from each finals bracket.
-              </div>
               <GroupPicker
                 :members="tsuyoFinalists"
                 name="Tsuyo Cup Finalists"
@@ -198,6 +198,7 @@ export default {
 .about-button {
   cursor: pointer;
   font-size: large;
+  margin-top: 10px;
 }
 
 .info-text {
