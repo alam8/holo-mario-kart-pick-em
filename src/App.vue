@@ -3,6 +3,9 @@ import GroupPicker from "./components/GroupPicker.vue";
 import GroupData from "./data/GroupData.js";
 import domtoimage from "dom-to-image-more";
 import { saveAs } from "file-saver";
+import { ref } from "vue";
+
+const aboutModal = ref(false);
 </script>
 
 <script>
@@ -79,9 +82,38 @@ export default {
   <header>
     <div class="wrapper">
       <h1 id="title">hololive New Year Cup 2023 Pick'em</h1>
+      <b-modal
+        v-model="aboutModal"
+        modal-class="about-card"
+        title="About"
+        ok-only
+      >
+        <div>Built by lambster8#7235</div>
+        <div>
+          Main tournament broadcast streamed on
+          <a href="https://www.youtube.com/@TokoyamiTowa">Towa's channel</a>
+        </div>
+        <div>
+          Source code at
+          <a href="https://github.com/alam8/holo-mario-kart-pickem"
+            >https://github.com/alam8/holo-mario-kart-pickem</a
+          >
+        </div>
+        <div>
+          Icons sourced from
+          <a href="https://hololive.hololivepro.com/en/talents"
+            >official hololive Talents page</a
+          >
+        </div>
+      </b-modal>
       <b-card class="group-card" no-body>
         <b-tabs pills justified lazy>
           <b-tab class="group-body" title="Group Stage: Tsuyo" active>
+            <div class="info-text">
+              Select your picks for the
+              {{ GroupData.FINALISTS_PER_GROUP }} Tsuyo Cup finalists from each
+              group.
+            </div>
             <GroupPicker
               v-for="group in groups"
               :key="group"
@@ -95,6 +127,11 @@ export default {
             />
           </b-tab>
           <b-tab class="group-body" title="Group Stage: Zako">
+            <div class="info-text">
+              Select your picks for the
+              {{ GroupData.FINALISTS_PER_GROUP }} Zako Cup finalists from each
+              group.
+            </div>
             <GroupPicker
               v-for="group in groups"
               :key="group"
@@ -117,6 +154,10 @@ export default {
             "
           >
             <div id="results">
+              <div class="info-text">
+                Select your picks for the top
+                {{ GroupData.PODIUM_SIZE }} finishers from each finals bracket.
+              </div>
               <GroupPicker
                 :members="tsuyoFinalists"
                 name="Tsuyo Cup Finalists"
@@ -145,11 +186,24 @@ export default {
           </b-tab>
         </b-tabs>
       </b-card>
+      <i-bi-info-circle-fill
+        @click="aboutModal = !aboutModal"
+        class="about-button"
+      />
     </div>
   </header>
 </template>
 
 <style scoped>
+.about-button {
+  cursor: pointer;
+  font-size: large;
+}
+
+.info-text {
+  font-weight: bold;
+}
+
 #title {
   margin-bottom: 1.5rem;
 }

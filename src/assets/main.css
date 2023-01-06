@@ -8,6 +8,10 @@
   font-weight: normal;
 }
 
+.about-card {
+  color: black;
+}
+
 a,
 .green {
   text-decoration: none;

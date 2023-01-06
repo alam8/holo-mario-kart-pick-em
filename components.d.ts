@@ -9,14 +9,21 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BButton: typeof import('bootstrap-vue-3')['BButton']
     BCard: typeof import('bootstrap-vue-3')['BCard']
+    BIcon: typeof import('bootstrap-vue-3')['BIcon']
+    BModal: typeof import('bootstrap-vue-3')['BModal']
     BTab: typeof import('bootstrap-vue-3')['BTab']
     BTabs: typeof import('bootstrap-vue-3')['BTabs']
     GroupPicker: typeof import('./src/components/GroupPicker.vue')['default']
     IBiDownload: typeof import('~icons/bi/download')['default']
+    IBiInfoCircle: typeof import('~icons/bi/info-circle')['default']
+    IBiInfoCircleFill: typeof import('~icons/bi/info-circle-fill')['default']
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
     IconDocumentation: typeof import('./src/components/icons/IconDocumentation.vue')['default']
     IconEcosystem: typeof import('./src/components/icons/IconEcosystem.vue')['default']
     IconSupport: typeof import('./src/components/icons/IconSupport.vue')['default']
     IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
+  }
+  export interface ComponentCustomProperties {
+    vBModal: typeof import('bootstrap-vue-3')['VBModal']
   }
 }
