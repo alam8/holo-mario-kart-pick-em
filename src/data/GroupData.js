@@ -6,7 +6,6 @@ export default {
       name: "Group A",
       members: [
         Members.Matsuri,
-        Members.Fubuki,
         Members.Okayu,
         Members.Marine,
         Members.Towa,
@@ -24,13 +23,12 @@ export default {
       members: [
         Members.Roboco,
         Members.Miko,
-        Members.Mel,
         Members.Suisei,
-        Members.Haachama,
+        Members.Mel,
+        Members.Fubuki,
         Members.Ayame,
         Members.Watame,
         Members.Luna,
-        Members.Lamy,
         Members.Gura,
         Members.Kaela,
         Members.Kobo,
