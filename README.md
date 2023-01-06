@@ -2,7 +2,7 @@
 
 Predictions selector tool for the hololive New Year Cup Mario Kart tournament. Access site at https://alam8.github.io/holo-mario-kart-pickem/.
 
-Built using [Vue 3](https://vuejs.org/), [Bootstrap](https://getbootstrap.com/)/[BootstrapVue 3](https://cdmoro.github.io/bootstrap-vue-3/), [Vue Horizontal](https://vue-horizontal.fuxing.dev/), [Vuetify](https://vuetifyjs.com/en/), [dom-to-image-more](https://github.com/1904labs/dom-to-image-more), and [FileSaver.js](https://github.com/eligrey/FileSaver.js).
+Built using [Vue 3](https://vuejs.org/), [Bootstrap](https://getbootstrap.com/)/[BootstrapVue 3](https://cdmoro.github.io/bootstrap-vue-3/), [Vue Horizontal](https://vue-horizontal.fuxing.dev/), [Vuetify](https://vuetifyjs.com/en/), [dom-to-image-more](https://github.com/1904labs/dom-to-image-more), and [FileSaver.js](https://github.com/eligrey/FileSaver.js). Icons sourced from [hololive Talents page](https://hololive.hololivepro.com/en/talents).
 
 ## Todo:
 - [x] Store selected members in array in parent component
