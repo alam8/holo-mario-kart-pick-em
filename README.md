@@ -1,15 +1,19 @@
 #  holo-mario-kart-pickem
 
-Predictions selector tool for the hololive New Year Cup Mario Kart tournament.
+Predictions selector tool for the hololive New Year Cup Mario Kart tournament. Access site at https://alam8.github.io/holo-mario-kart-pickem/.
 
-## TODO:
+Built using [Vue 3](https://vuejs.org/), [Bootstrap](https://getbootstrap.com/)/[BootstrapVue 3](https://cdmoro.github.io/bootstrap-vue-3/), [Vue Horizontal](https://vue-horizontal.fuxing.dev/), [Vuetify](https://vuetifyjs.com/en/), [dom-to-image-more](https://github.com/1904labs/dom-to-image-more), and [FileSaver.js](https://github.com/eligrey/FileSaver.js).
+
+## Todo:
 - [x] Store selected members in array in parent component
 - [x] Separate rounds using tab component
 - [x] Limit selections per group
 - [x] Disable/enable tabs based on selections
-- [ ] Download icon images instead of linking to site
-- [ ] Styling
-- [ ] Rewrite in Typescript
+- [ ] Download icon images instead of linking to site?
+
+## Backlog for next year(?):
+- [ ] Rewrite in TypeScript
+- [ ] Design scoring system and hook up to backend for online leaderboard
 
 ## Recommended IDE Setup
 
