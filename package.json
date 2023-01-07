@@ -1,6 +1,6 @@
 {
-  "name": "new",
-  "version": "0.0.0",
+  "name": "holo-mario-kart-pickem",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "vite",

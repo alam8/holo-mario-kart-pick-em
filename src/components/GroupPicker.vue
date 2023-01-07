@@ -6,10 +6,10 @@ export default {
     "members",
     "name",
     "round",
-    "modelValue",
     "winnersCount",
     "complement",
     "champions",
+    "modelValue",
   ],
   components: { VueHorizontal },
   data: function () {
@@ -67,6 +67,11 @@ export default {
 </template>
 
 <style scoped>
+:checked + label {
+  border: 3px solid rgb(14, 190, 52);
+  border-radius: 25px;
+}
+
 #first {
   border: 3px solid rgb(255, 217, 0);
   border-radius: 25px;
@@ -82,12 +87,24 @@ export default {
   border-radius: 25px;
 }
 
+label img {
+  height: 75px;
+  width: 75px;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+}
+
 input:disabled + label > img {
   opacity: 0.35;
 }
 
 input:disabled + label > div {
   opacity: 0.35;
+}
+
+:checked + label img {
+  transform: scale(0.9);
+  z-index: -1;
 }
 
 .selector {
@@ -123,28 +140,5 @@ label:before {
   line-height: 28px;
   transition-duration: 0.4s;
   transform: scale(0);
-}
-
-label img {
-  height: 75px;
-  width: 75px;
-  transition-duration: 0.2s;
-  transform-origin: 50% 50%;
-}
-
-:checked + label {
-  border: 3px solid rgb(14, 190, 52);
-  border-radius: 25px;
-}
-
-/* :checked + label:before {
-  content: "✓";
-  background-color: grey;
-  transform: scale(1);
-} */
-
-:checked + label img {
-  transform: scale(0.9);
-  z-index: -1;
 }
 </style>

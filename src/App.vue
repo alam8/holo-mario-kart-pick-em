@@ -52,12 +52,12 @@ export default {
         this.tsuyoChampion.length === size && this.zakoChampion.length === size
       );
     },
-    async print() {
+    async saveResultsAsImage() {
       var blob = document.getElementById("results");
       var originalWidth = blob.offsetWidth;
       var originalHeight = blob.offsetHeight;
       blob.style.width = "1400px";
-      blob.style.height = "325px";
+      blob.style.height = "350px";
 
       var svgs = document.getElementsByTagName("svg");
       for (var i = 0; i < svgs.length; ++i) {
@@ -90,7 +90,10 @@ export default {
       >
         <div>Built by lambster8#7235</div>
         <div>
-          Main tournament broadcast streamed on
+          <a href="https://www.youtube.com/watch?v=KDyJmdtclAk">
+            Main tournament broadcast</a
+          >
+          streamed on
           <a href="https://www.youtube.com/@TokoyamiTowa">Towa's channel</a>
         </div>
         <div>
@@ -100,7 +103,7 @@ export default {
           >
         </div>
         <div>
-          Icons sourced from
+          Icons sourced from the
           <a href="https://hololive.hololivepro.com/en/talents"
             >official hololive Talents page</a
           >
@@ -179,7 +182,7 @@ export default {
             </div>
             <b-button
               variant="primary"
-              @click="print"
+              @click="saveResultsAsImage"
               :disabled="champsNotSelected(GroupData.PODIUM_SIZE)"
               ><i-bi-download style="margin-right: 7px" />Save Results As Image
             </b-button>
